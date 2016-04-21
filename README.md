@@ -1,12 +1,11 @@
 # DocuSign-InterviewProblem
-Problem Description
-Problem:
-You are in your house wearing pajamas. You must be appropriately dressed for the temperature before leaving your house.
-Your challenge is to programmatically process a list of commands for getting ready, enforce related rules, and display appropriate output.
-Inputs:
-1.	Temperature Type (one of the following)
+## Problem Description
+###Problem:
+######You are in your house wearing pajamas. You must be appropriately dressed for the temperature before leaving your house. Your challenge is to programmatically process a list of commands for getting ready, enforce related rules, and display appropriate output.
+####Inputs:
+* * 1.	Temperature Type (one of the following)
 •	HOT
-•	COLD
+•	COLD * *
 2.	Comma separated list of numeric commands
 Command	Description	HOT Response	COLD Response
 1	Put on footwear	“sandals”	“boots”
