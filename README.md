@@ -20,7 +20,7 @@ Temperature Type (one of the following)
 | Leave house	| “leaving house”	| “leaving house” |
 | Take off pajamas |	“Removing PJs” |	“Removing PJs” |
 
-Rules:
+####Rules:
 - Initial state is in your house with your pajamas on
 - Pajamas must be taken off before anything else can be put on
 - Only 1 piece of each type of clothing may be put on
