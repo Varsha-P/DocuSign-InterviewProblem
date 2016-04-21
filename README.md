@@ -9,7 +9,8 @@ Temperature Type (one of the following)
 
 ####Comma separated list of numeric commands:
 
-#####Command	Description	HOT Response	COLD Response
+| Command	| Description |	HOT Response	| COLD Response |
+|-------|-----------|------------|------------|
 - Put on footwear	“sandals”	“boots”
 - Put on headwear	“sun visor”	“hat”
 - Put on socks	fail	“socks”
