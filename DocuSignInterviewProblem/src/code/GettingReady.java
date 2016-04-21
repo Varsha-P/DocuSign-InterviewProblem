@@ -45,7 +45,8 @@ public class GettingReady {
 			
 		return false;
 	}
-	public void cold(ArrayList<String> commands, String temperature){
+	
+	public void processCommands(ArrayList<String> commands, String temperature){
 		HashMap<String,Boolean> check = new HashMap<String,Boolean>();
 		check.put("8", true);
 		System.out.print("Removing PJs, ");
@@ -66,10 +67,12 @@ public class GettingReady {
 								bool = true;
 							}
 							break;
+
 				case "3":	if(temperature.equals("hot")){
 								bool = true;
 							}
-							break;							
+							break;
+							
 				case "5":	if(temperature.equals("cold")){
 								if(!check.containsKey("4")){ // making sure the shirt is on before jacket
 									bool = true;
@@ -126,14 +129,14 @@ public class GettingReady {
         	}
         	if(temperature.equals("hot")){ 
         		if(commands.get(0).equals("8")) // remove pajamas first
-        			cold(commands, "hot"); // call 'hot' method passing commands as argument
+        			processCommands(commands, "hot"); // call 'hot' method passing commands as argument
         		else{
         			System.out.println("fail");
         		}
         	}
         	else if(temperature.equals("cold")){
         		if(commands.get(0).equals("8")) // remove pajamas first
-        			cold(commands, "cold"); // call 'cold' method passing commands as argument
+        			processCommands(commands, "cold"); // call 'cold' method passing commands as argument
         		else
         			System.out.println("fail");
         	}
