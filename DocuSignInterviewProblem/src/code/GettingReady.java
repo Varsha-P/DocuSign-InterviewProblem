@@ -53,7 +53,7 @@ public class GettingReady {
 		Boolean bool = false;
 		for(int i =1;i<commands.size();i++){
 			String command = commands.get(i);
-			if(check.containsKey(command)){
+			if(check.containsKey(command)){ // making sure only 1 piece of each type is worn
 				bool = true;
 				break;
 			}
@@ -66,12 +66,12 @@ public class GettingReady {
 							bool = true;
 						}
 						break;
-			case "2":	if(!check.containsKey("4")){
+			case "2":	if(!check.containsKey("4")){ // making sure the shirt is on before headwear
 							bool = true;
 						}
 						break;
 						
-			case "7":	if(check.keySet().size()!=5){
+			case "7":	if(check.keySet().size()!=5){ // all pieces of clothing have to be worn before leaving the house
 							bool = true;
 						}
 						break;
@@ -80,7 +80,7 @@ public class GettingReady {
 				break;
 			check.put(command, true);
 			if(!command.equals("7"))
-				System.out.print(hot.get(command)+", ");
+				System.out.print(hot.get(command)+", "); // makiing sure last command does not end with a comma
 			else
 				System.out.println(hot.get(command));
 			 
@@ -109,21 +109,20 @@ public class GettingReady {
 							}
 							break;
 							
-				case "2":	if(!check.containsKey("4")){
+				case "2":	if(!check.containsKey("4")){ // making sure the shirt is on before headwear
 								bool = true;
 							}
 							break;
 							
-				case "5":	if(!check.containsKey("4")){
+				case "5":	if(!check.containsKey("4")){ // making sure the shirt is on before jacket
 								bool = true;
 							}
 							break;
 							
-				case "7":	if(check.keySet().size()!=7){
+				case "7":	if(check.keySet().size()!=7){ // all pieces of clothing have to be worn before leaving the house
 								bool = true;
 							}
 							break;
-					
 			}
 			if(bool)
 				break;
