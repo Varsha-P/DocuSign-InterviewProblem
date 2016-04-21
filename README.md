@@ -10,14 +10,14 @@ Temperature Type (one of the following)
 Comma separated list of numeric commands
 
 Command	Description	HOT Response	COLD Response
-  *Put on footwear	“sandals”	“boots”
-  *Put on headwear	“sun visor”	“hat”
-  *Put on socks	fail	“socks”
-  *Put on shirt	“t-shirt”	“shirt”
-  *Put on jacket	fail	“jacket”
-  *Put on pants	“shorts”	“pants”
-  *Leave house	“leaving house”	“leaving house”
-  *Take off pajamas	“Removing PJs”	“Removing PJs”
+-Put on footwear	“sandals”	“boots”
+-Put on headwear	“sun visor”	“hat”
+-Put on socks	fail	“socks”
+-Put on shirt	“t-shirt”	“shirt”
+-Put on jacket	fail	“jacket”
+-Put on pants	“shorts”	“pants”
+-Leave house	“leaving house”	“leaving house”
+-Take off pajamas	“Removing PJs”	“Removing PJs”
 
 Rules:
   *Initial state is in your house with your pajamas on
