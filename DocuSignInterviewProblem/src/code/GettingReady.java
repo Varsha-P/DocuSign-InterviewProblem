@@ -98,7 +98,7 @@ public class GettingReady {
 		Boolean bool = false;
 		for(int i =1;i<commands.size();i++){
 			String command = commands.get(i);
-			if(check.containsKey(command)){
+			if(check.containsKey(command)){ // making sure only 1 piece of each type is worn
 				System.out.println("fail");
 				bool = true;
 				break;
