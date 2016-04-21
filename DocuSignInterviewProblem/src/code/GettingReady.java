@@ -45,53 +45,7 @@ public class GettingReady {
 			
 		return false;
 	}
-	
-	public void hot(ArrayList<String> commands){
-		HashMap<String,Boolean> check = new HashMap<String,Boolean>();
-		check.put("8", true);
-		System.out.print("Removing PJs, ");
-		Boolean bool = false;
-		for(int i =1;i<commands.size();i++){
-			String command = commands.get(i);
-			if(check.containsKey(command)){ // making sure only 1 piece of each type is worn
-				bool = true;
-				break;
-			}
-			if(!hot.containsKey(command)){
-				bool = true;
-				break;
-			}
-			switch(command){
-			case "1":	if(beforeShoes("hot",check)){
-							bool = true;
-						}
-						break;
-			case "2":	if(!check.containsKey("4")){ // making sure the shirt is on before headwear
-							bool = true;
-						}
-						break;
-						
-			case "7":	if(check.keySet().size()!=5){ // all pieces of clothing have to be worn before leaving the house
-							bool = true;
-						}
-						break;
-			}
-			if(bool)
-				break;
-			check.put(command, true);
-			if(!command.equals("7"))
-				System.out.print(hot.get(command)+", "); // makiing sure last command does not end with a comma
-			else
-				System.out.println(hot.get(command));
-			 
-		}
-		if(bool){
-			if(!hot.keySet().equals(check.keySet())){ // making sure all items of clothings are on 
-				System.out.println("fail");
-			}
-		}
-	}
-	public void cold(ArrayList<String> commands){
+	public void cold(ArrayList<String> commands, String temperature){
 		HashMap<String,Boolean> check = new HashMap<String,Boolean>();
 		check.put("8", true);
 		System.out.print("Removing PJs, ");
@@ -100,11 +54,10 @@ public class GettingReady {
 			String command = commands.get(i);
 			if(check.containsKey(command)){ // making sure only 1 piece of each type is worn
 				System.out.println("fail");
-				bool = true;
 				break;
 			}
 			switch(command){
-				case "1":	if(beforeShoes("cold",check)){
+				case "1":	if(beforeShoes(temperature,check)){
 								bool = true;
 							}
 							break;
@@ -113,14 +66,28 @@ public class GettingReady {
 								bool = true;
 							}
 							break;
-							
-				case "5":	if(!check.containsKey("4")){ // making sure the shirt is on before jacket
+				case "3":	if(temperature.equals("hot")){
 								bool = true;
 							}
+							break;							
+				case "5":	if(temperature.equals("cold")){
+								if(!check.containsKey("4")){ // making sure the shirt is on before jacket
+									bool = true;
+								}
+							}
+							else
+								bool = true;
 							break;
 							
-				case "7":	if(check.keySet().size()!=7){ // all pieces of clothing have to be worn before leaving the house
-								bool = true;
+				case "7":	if(temperature.equals("cold")){
+								if(check.keySet().size()!=7){ // all pieces of clothing have to be worn before leaving the house
+									bool = true;
+								}
+							}
+							else{
+								if(check.keySet().size()!=5){ // all pieces of clothing have to be worn before leaving the house
+									bool = true;
+								}								
 							}
 							break;
 			}
@@ -128,13 +95,20 @@ public class GettingReady {
 				break;
 			check.put(command, true);
 			if(!command.equals("7"))
-				System.out.print(cold.get(command)+", "); // makiing sure last command does not end with a comma
+				System.out.print(cold.get(command)+", "); // making sure last command does not end with a comma
 			else
 				System.out.println(cold.get(command));		
 		}
 		if(bool){
-			if(!cold.keySet().equals(check.keySet())){ // making sure all items of clothings are on
-				System.out.println("fail");
+			if(temperature.equals("hot")){
+				if(!hot.keySet().equals(check.keySet())){ // making sure all items of clothings are on
+					System.out.println("fail");
+				}
+			}
+			else{
+				if(!cold.keySet().equals(check.keySet())){ // making sure all items of clothings are on
+					System.out.println("fail");
+				}
 			}
 		}
 	}
@@ -152,14 +126,14 @@ public class GettingReady {
         	}
         	if(temperature.equals("hot")){ 
         		if(commands.get(0).equals("8")) // remove pajamas first
-        			hot(commands); // call 'hot' method passing commands as argument
+        			cold(commands, "hot"); // call 'hot' method passing commands as argument
         		else{
         			System.out.println("fail");
         		}
         	}
         	else if(temperature.equals("cold")){
         		if(commands.get(0).equals("8")) // remove pajamas first
-        			cold(commands); // call 'cold' method passing commands as argument
+        			cold(commands, "cold"); // call 'cold' method passing commands as argument
         		else
         			System.out.println("fail");
         	}
