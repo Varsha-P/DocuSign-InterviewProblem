@@ -27,7 +27,8 @@ Rules:
 •	The shirt must be put on before the headwear or jacket
 •	You cannot leave the house until all items of clothing are on (except socks and a jacket when it’s hot)
 •	If an invalid command is issued, respond with “fail” and stop processing commands
-Examples
+
+#####Examples:
 ######Success
 ######Input: HOT 8, 6, 4, 2, 1, 7
 ######Output: Removing PJs, shorts, t-shirt, sun visor, sandals, leaving house
