@@ -4,8 +4,8 @@
 ######You are in your house wearing pajamas. You must be appropriately dressed for the temperature before leaving your house. Your challenge is to programmatically process a list of commands for getting ready, enforce related rules, and display appropriate output.
 ####Inputs:
 Temperature Type (one of the following)
-  *HOT
-  *COLD 
+- HOT
+- COLD 
 
 Comma separated list of numeric commands
 
